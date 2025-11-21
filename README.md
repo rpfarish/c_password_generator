@@ -13,6 +13,19 @@ A cryptographically secure password generator using OpenSSL's random number gene
 - GCC compiler
 - OpenSSL development libraries (`libssl-dev` on Debian/Ubuntu, `openssl-devel` on RHEL/Fedora)
 
+**Runtime dependencies:**
+
+- OpenSSL 3.x libraries (`libssl3` and `libcrypto3`)
+  - Debian/Ubuntu: `sudo apt install libssl3`
+  - RHEL/Fedora: `sudo dnf install openssl-libs`
+  - Arch: `sudo pacman -S openssl`
+
+Most Linux distributions include OpenSSL by default. You can verify with:
+
+```bash
+ldconfig -p | grep libssl
+```
+
 ### Build from source
 
 ```bash
