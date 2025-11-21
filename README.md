@@ -41,14 +41,14 @@ pwg [options]
 
 ### Options
 
-| Option | Argument | Description | Default |
-|--------|----------|-------------|---------|
-| `-l` | `<length>` | Password length (must be > 0) | 15 |
-| `-e` | `<chars>` | Characters to exclude from password | none |
-| `-s` | none | Exclude symbols | included |
-| `-u` | none | Exclude lowercase letters | included |
-| `-U` | none | Exclude uppercase letters | included |
-| `-n` | none | Exclude numbers | included |
+| Option | Argument   | Description                         | Default  |
+| ------ | ---------- | ----------------------------------- | -------- |
+| `-l`   | `<length>` | Password length (must be > 0)       | 15       |
+| `-e`   | `<chars>`  | Characters to exclude from password | none     |
+| `-s`   | none       | Exclude symbols                     | included |
+| `-u`   | none       | Exclude lowercase letters           | included |
+| `-U`   | none       | Exclude uppercase letters           | included |
+| `-n`   | none       | Exclude numbers                     | included |
 
 ### Character sets
 
@@ -57,7 +57,7 @@ By default, passwords include:
 - **Lowercase letters**: `a-z`
 - **Uppercase letters**: `A-Z`
 - **Numbers**: `0-9`
-- **Symbols**: `` !"#$%&'()*+,-./:;<=>?@[\]^_{|}~ ``
+- **Symbols**: `!@#$%^&*()[]{}-_=+'";:,.<>/?\|~`
 
 ## Examples
 
@@ -109,7 +109,7 @@ The generator uses OpenSSL's `RAND_bytes` function, which provides cryptographic
 2. Check if the character belongs to an allowed character set
 3. Check if the character is in the exclusion list
 4. If both checks pass, add to password; otherwise, retry
-invalid option, memory allocation failure, or OpenSSL error)
+   invalid option, memory allocation failure, or OpenSSL error)
 
 ## Notes
 
