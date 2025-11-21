@@ -4,8 +4,7 @@ A cryptographically secure password generator which uses OpenSSL.
 
 ## Overview
 
-`pwg` generates random passwords with customizable character exclusion.
-The generator uses OpenSSL's `RAND_bytes` function, which provides cryptographically secure random values from the system's entropy source. The implementation includes rejection sampling to ensure uniform distribution across the requested character range.
+`pwg` generates random passwords with customizable character exclusion. The generator uses OpenSSL's `RAND_bytes` function, which provides cryptographically secure random values from the system's entropy source. The implementation includes rejection sampling to ensure uniform distribution across the requested character range.
 
 ## Installation
 
