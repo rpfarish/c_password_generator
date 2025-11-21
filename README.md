@@ -1,10 +1,11 @@
 # Password Generator (pwg)
 
-A cryptographically secure password generator using OpenSSL's random number generation.
+A cryptographically secure password generator which uses OpenSSL.
 
 ## Overview
 
-`pwg` generates random passwords with configurable character sets and exclusions. It uses OpenSSL's `RAND_bytes` for cryptographically secure randomness, making it suitable for generating passwords for security-sensitive applications.
+`pwg` generates random passwords with customizable character exclusion.
+The generator uses OpenSSL's `RAND_bytes` function, which provides cryptographically secure random values from the system's entropy source. The implementation includes rejection sampling to ensure uniform distribution across the requested character range.
 
 ## Installation
 
@@ -38,6 +39,8 @@ make debug
 # Install to ~/.local/bin
 make install
 ```
+
+- Ensure `~/.local/bin` is in your `PATH` when using `make install`
 
 ### Build targets
 
@@ -109,25 +112,6 @@ Generate a PIN (numbers only):
 ```bash
 pwg -l 6 -u -U -s
 ```
-
-## Implementation details
-
-### Random number generation
-
-The generator uses OpenSSL's `RAND_bytes` function, which provides cryptographically secure random values from the system's entropy source. The implementation includes rejection sampling to ensure uniform distribution across the requested character range.
-
-### Character selection algorithm
-
-1. Generate a random number in the ASCII printable range (33-126)
-2. Check if the character belongs to an allowed character set
-3. Check if the character is in the exclusion list
-4. If both checks pass, add to password; otherwise, retry
-   invalid option, memory allocation failure, or OpenSSL error)
-
-## Notes
-
-- The exclusion string is matched character-by-character; use `-e "abc"` to exclude letters a, b, and c
-- Ensure `~/.local/bin` is in your `PATH` when using `make install`
 
 ## License
 
