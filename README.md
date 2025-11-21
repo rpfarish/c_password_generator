@@ -57,7 +57,7 @@ By default, passwords include:
 - **Lowercase letters**: `a-z`
 - **Uppercase letters**: `A-Z`
 - **Numbers**: `0-9`
-- **Symbols**: `` !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~ ``
+- **Symbols**: `` !"#$%&'()*+,-./:;<=>?@[\]^_{|}~ ``
 
 ## Examples
 
